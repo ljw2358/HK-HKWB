@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HK WorldBank - Global Digital Banking Platform (Vibrant Master Edition v5.7)</title>
+  <title>HK WorldBank - Global Digital Banking Platform (Vibrant Master Edition v6.1)</title>
   <style>
     /* ==========================================
-       [Vibrant Neon Cyberpunk Theme & Master Styles]
+       [Vibrant & Bright Neon Cyberpunk Theme]
        ========================================== */
     :root {
-      --bg-primary: #05050a;
-      --bg-secondary: #0b0f19;
-      --bg-card: #131b2e;
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #121829;
+      --bg-card: #1a233a;
       --neon-cyan: #00f2fe;
-      --neon-purple: #b5acfc;
-      --neon-pink: #ff007f;
-      --neon-green: #00ffcc;
-      --neon-yellow: #ffb700;
+      --neon-purple: #c084fc;
+      --neon-pink: #ff2a85;
+      --neon-green: #10b981;
+      --neon-yellow: #fbbf24;
+      --neon-orange: #fb923c;
       --text-main: #ffffff;
-      --text-sub: #a0aec0;
-      --border-glow: rgba(0, 242, 254, 0.4);
+      --text-sub: #cbd5e1;
+      --border-glow: rgba(0, 242, 254, 0.6);
     }
 
     * {
@@ -29,11 +30,11 @@
     }
 
     body {
-      background-color: var(--bg-primary);
+      background: linear-gradient(135deg, #0f172a, #1e1b4b, #0f172a);
       color: var(--text-main);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
-      padding-bottom: 90px;
+      padding-bottom: 50px;
     }
 
     /* 상단 프로필/헤더 (화려한 네온 로고 및 뱃지) */
@@ -41,40 +42,40 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 24px;
-      background: linear-gradient(135deg, #0f172a, #1e1b4b);
+      padding: 20px 28px;
+      background: linear-gradient(135deg, #1e293b, #312e81, #1e1b4b);
       border-bottom: 3px solid var(--neon-cyan);
-      box-shadow: 0 4px 25px rgba(0, 242, 254, 0.3);
+      box-shadow: 0 6px 30px rgba(0, 242, 254, 0.4);
     }
     .brand-logo {
       display: flex;
       flex-direction: column;
     }
     .brand-title {
-      font-size: 1.7rem;
+      font-size: 1.85rem;
       font-weight: 900;
-      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink));
+      background: linear-gradient(90deg, #38bdf8, var(--neon-purple), var(--neon-pink), var(--neon-yellow));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -0.5px;
       text-transform: uppercase;
-      filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.6));
+      filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.7));
     }
     .brand-subtitle {
-      font-size: 0.78rem;
-      color: var(--neon-purple);
+      font-size: 0.82rem;
+      color: var(--neon-cyan);
       font-weight: 700;
       letter-spacing: 1.5px;
     }
     .language-badge {
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       font-weight: bold;
       color: #fff;
-      background: linear-gradient(135deg, #312e81, #1e1b4b);
-      padding: 8px 18px;
-      border-radius: 24px;
-      border: 2px solid var(--neon-purple);
-      box-shadow: 0 0 15px rgba(181, 172, 252, 0.4);
+      background: linear-gradient(135deg, #4f46e5, #9333ea);
+      padding: 10px 20px;
+      border-radius: 28px;
+      border: 2px solid var(--neon-cyan);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -84,146 +85,147 @@
     .nav-tabs {
       display: flex;
       overflow-x: auto;
-      background: #030712;
-      border-bottom: 2px solid #1e293b;
+      background: #090d16;
+      border-bottom: 3px solid #334155;
       white-space: nowrap;
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 6px 0;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      padding: 8px 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.7);
     }
     .nav-tabs::-webkit-scrollbar {
-      height: 4px;
+      height: 6px;
     }
     .nav-tabs::-webkit-scrollbar-thumb {
       background: var(--neon-cyan);
+      border-radius: 4px;
     }
     .nav-tabs button {
       flex: 1;
-      padding: 14px 22px;
+      padding: 14px 24px;
       background: none;
       border: none;
       color: var(--text-sub);
       font-weight: 800;
-      font-size: 0.95rem;
+      font-size: 1rem;
       cursor: pointer;
-      border-bottom: 3px solid transparent;
+      border-bottom: 4px solid transparent;
       transition: all 0.3s ease;
     }
     .nav-tabs button:hover {
       color: var(--neon-cyan);
-      background: rgba(0, 242, 254, 0.08);
+      background: rgba(0, 242, 254, 0.12);
     }
     .nav-tabs button.active {
       color: var(--neon-cyan);
       border-bottom-color: var(--neon-cyan);
-      background: rgba(19, 27, 46, 0.9);
-      text-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(49, 46, 129, 0.9));
+      text-shadow: 0 0 12px rgba(0, 242, 254, 0.9);
     }
 
     /* 메인 콘텐츠 컨테이너 */
     main {
-      padding: 24px;
-      max-width: 1100px;
+      padding: 28px;
+      max-width: 1150px;
       margin: 0 auto;
     }
     .section-card {
-      background: var(--bg-card);
-      border: 2px solid #1e3a8a;
-      border-radius: 18px;
-      padding: 28px;
-      margin-bottom: 28px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(0, 242, 254, 0.05);
-      border-top: 5px solid var(--neon-cyan);
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 2px solid #38bdf8;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(56, 189, 248, 0.1);
+      border-top: 6px solid var(--neon-cyan);
     }
     .section-title {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 900;
       color: #fff;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       gap: 12px;
-      border-bottom: 2px solid #1e293b;
-      padding-bottom: 14px;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+      border-bottom: 2px solid #334155;
+      padding-bottom: 16px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
     }
 
-    /* 2번 10대 핵심 모듈 (다채롭고 화려한 2행 5열 그리드) */
+    /* 2번 10대 핵심 모듈 (화려하고 밝은 2행 5열 그리드) */
     .module-grid-2x5 {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      margin-top: 16px;
+      gap: 14px;
+      margin-top: 20px;
     }
     .module-btn {
-      background: linear-gradient(135deg, #1e1b4b, #312e81);
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
       border: 2px solid var(--neon-purple);
       color: #fff;
-      padding: 18px 8px;
-      border-radius: 14px;
-      font-size: 0.88rem;
+      padding: 20px 10px;
+      border-radius: 16px;
+      font-size: 0.95rem;
       font-weight: 900;
       cursor: pointer;
       text-align: center;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(181, 172, 252, 0.2);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 82px;
+      min-height: 90px;
     }
     .module-btn:hover {
       border-color: var(--neon-green);
-      background: linear-gradient(135deg, #064e3b, #065f46);
-      color: var(--neon-green);
-      transform: translateY(-5px) scale(1.04);
-      box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+      background: linear-gradient(135deg, #059669, #10b981);
+      color: #fff;
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.8);
     }
     .module-btn.active {
       background: linear-gradient(135deg, #0284c7, var(--neon-cyan));
-      color: #030712;
+      color: #090d16;
       border-color: #fff;
       font-weight: 900;
-      box-shadow: 0 0 25px rgba(0, 242, 254, 0.8);
+      box-shadow: 0 0 30px rgba(0, 242, 254, 0.9);
     }
 
-    /* 양파 껍질 세부 프로세스 뷰어 (네온 다중 테두리) */
+    /* 모듈 상세 설명 및 프로세스 뷰어 (밝고 세련된 네온 박스) */
     .process-view {
       display: none;
-      background: linear-gradient(135deg, #030712, #0f172a);
-      border: 2px dashed var(--neon-cyan);
-      border-radius: 16px;
-      padding: 26px;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border: 2px solid var(--neon-cyan);
+      border-radius: 18px;
+      padding: 28px;
       margin-top: 24px;
       animation: fadeIn 0.4s ease-in-out;
-      box-shadow: inset 0 0 25px rgba(0, 242, 254, 0.2);
+      box-shadow: 0 8px 25px rgba(0, 242, 254, 0.25), inset 0 0 20px rgba(0, 242, 254, 0.1);
     }
     .process-view.active {
       display: block;
     }
     .step-badge {
       display: inline-block;
-      background: var(--neon-pink);
+      background: linear-gradient(135deg, var(--neon-pink), #f43f5e);
       color: #fff;
       font-weight: 900;
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 0.88rem;
-      margin-bottom: 10px;
-      box-shadow: 0 0 12px rgba(255, 0, 127, 0.6);
+      padding: 8px 18px;
+      border-radius: 22px;
+      font-size: 0.92rem;
+      margin-bottom: 12px;
+      box-shadow: 0 0 15px rgba(255, 42, 133, 0.7);
     }
     .process-step-list {
-      margin-top: 14px;
+      margin-top: 16px;
       padding-left: 24px;
     }
     .process-step-list li {
       margin-bottom: 12px;
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.7;
     }
     .process-step-list li::marker {
       color: var(--neon-green);
@@ -234,71 +236,71 @@
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    ul { list-style: disc; padding-left: 20px; }
-    li { margin-bottom: 10px; color: var(--text-sub); font-size: 0.98rem; }
+    ul { list-style: disc; padding-left: 22px; }
+    li { margin-bottom: 12px; color: var(--text-sub); font-size: 1.02rem; }
     li strong { color: #fff; }
 
-    /* 상세 문서 박스 스타일 (화려한 네온 보더) */
+    /* 상세 문서 박스 스타일 (화려한 보더 & 밝은 배경) */
     .doc-box {
-      background: #0f172a;
-      border: 2px solid #3b82f6;
-      border-radius: 14px;
-      padding: 22px;
-      margin-bottom: 18px;
+      background: linear-gradient(135deg, #1e293b, #111827);
+      border: 2px solid #60a5fa;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+      box-shadow: 0 6px 20px rgba(96, 165, 250, 0.2);
     }
     .doc-box:hover {
       border-color: var(--neon-green);
-      box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
-      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
+      transform: translateY(-3px);
     }
     .doc-box h5 {
       color: var(--neon-cyan);
-      margin-bottom: 8px;
-      font-size: 1.15rem;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
       font-weight: 800;
-      text-shadow: 0 0 5px rgba(0, 242, 254, 0.4);
+      text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
     }
     .doc-box p {
       color: var(--text-sub);
-      font-size: 0.98rem;
-      line-height: 1.6;
+      font-size: 1.02rem;
+      line-height: 1.7;
     }
 
     /* 검색창 스타일 */
     .search-input {
       width: 100%;
-      padding: 16px 20px;
-      background: #0f172a;
+      padding: 18px 22px;
+      background: #111827;
       border: 2px solid var(--neon-purple);
-      border-radius: 14px;
+      border-radius: 16px;
       color: #fff;
-      font-size: 1.05rem;
-      margin-bottom: 24px;
-      box-shadow: inset 0 2px 6px rgba(0,0,0,0.6), 0 0 10px rgba(181, 172, 252, 0.2);
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.6), 0 0 15px rgba(192, 132, 252, 0.3);
     }
     .search-input:focus {
       outline: none;
       border-color: var(--neon-cyan);
-      box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.8);
     }
 
     /* 최하단 고정 SNS 미디어 섹션 (YouTube & TikTok 화려한 카드) */
     .media-footer {
-      max-width: 1100px;
-      margin: 40px auto 20px auto;
-      padding: 0 24px;
+      max-width: 1150px;
+      margin: 45px auto 25px auto;
+      padding: 0 28px;
     }
     .media-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 24px;
     }
     .media-card {
       background: var(--bg-card);
-      border-radius: 18px;
-      padding: 24px;
+      border-radius: 20px;
+      padding: 28px;
       text-align: center;
       border: 2px solid;
       text-decoration: none;
@@ -306,48 +308,73 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
       transition: all 0.3s ease;
     }
     .media-card:hover {
-      transform: translateY(-6px) scale(1.02);
+      transform: translateY(-8px) scale(1.03);
     }
     .media-card.youtube {
-      border-color: #ff0000;
-      background: linear-gradient(135deg, #1e1b4b, #450a0a);
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+      border-color: #ef4444;
+      background: linear-gradient(135deg, #1e1b4b, #7f1d1d);
+      box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
     }
     .media-card.youtube:hover {
-      box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+      box-shadow: 0 0 35px rgba(239, 68, 68, 0.8);
     }
     .media-card.tiktok {
       border-color: var(--neon-cyan);
       background: linear-gradient(135deg, #1e1b4b, #042f2e);
-      box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
     }
     .media-card.tiktok:hover {
-      box-shadow: 0 0 30px rgba(0, 242, 254, 0.7);
+      box-shadow: 0 0 35px rgba(0, 242, 254, 0.8);
     }
     .media-icon {
-      font-size: 3.2rem;
-      margin-bottom: 10px;
-      filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+      font-size: 3.5rem;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 12px rgba(255,255,255,0.6));
     }
     .media-title {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 900;
       color: #fff;
     }
     .media-badge {
       display: inline-block;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: bold;
-      padding: 6px 14px;
-      border-radius: 15px;
-      margin-top: 10px;
-      background: rgba(0,0,0,0.5);
+      padding: 8px 16px;
+      border-radius: 18px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.6);
       color: var(--neon-yellow);
       border: 1px solid var(--neon-yellow);
+    }
+
+    /* 최하단 카피라이트 및 이메일 푸터 */
+    .site-footer {
+      max-width: 1150px;
+      margin: 30px auto 10px auto;
+      padding: 24px 28px;
+      text-align: center;
+      background: #090d16;
+      border-top: 2px solid #334155;
+      border-radius: 16px;
+      color: var(--text-sub);
+      font-size: 0.95rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .site-footer p {
+      margin-bottom: 8px;
+    }
+    .site-footer a {
+      color: var(--neon-cyan);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .site-footer a:hover {
+      text-decoration: underline;
     }
 
     @keyframes fadeIn {
@@ -357,21 +384,21 @@
 
     /* 반응형 모바일 최적화 */
     @media (max-width: 768px) {
-      header { padding: 14px 18px; }
-      .brand-title { font-size: 1.35rem; }
-      main { padding: 12px; }
+      header { padding: 16px 20px; }
+      .brand-title { font-size: 1.45rem; }
+      main { padding: 16px; }
       .module-grid-2x5 {
         grid-template-columns: repeat(5, 1fr);
         gap: 6px;
       }
       .module-btn {
-        padding: 10px 2px;
-        font-size: 0.74rem;
-        min-height: 60px;
-        border-radius: 10px;
+        padding: 12px 2px;
+        font-size: 0.78rem;
+        min-height: 68px;
+        border-radius: 12px;
       }
-      .section-card { padding: 18px; border-radius: 14px; }
-      .media-grid { grid-template-columns: 1fr; gap: 16px; }
+      .section-card { padding: 20px; border-radius: 16px; }
+      .media-grid { grid-template-columns: 1fr; gap: 18px; }
     }
   </style>
 </head>
@@ -407,7 +434,7 @@
         <div class="section-title">
           <span>1. 고객센터 AGI '삐니' (AI 실시간 지원)</span>
         </div>
-        <p style="font-size: 1rem; color: var(--text-sub); margin-bottom: 16px;">
+        <p style="font-size: 1.05rem; color: var(--text-sub); margin-bottom: 18px;">
           전 세계 60개국 언어를 실시간 동기화하는 AGI 인텔리전스 고객센터가 24시간 무중단 가동 중입니다.
         </p>
         <div class="doc-box">
@@ -416,13 +443,13 @@
         </div>
       </section>
 
-      <!-- 2번 10대 핵심 모듈 (완벽한 2행 5열 그리드) -->
+      <!-- 2번 10대 핵심 모듈 (완벽한 2행 5열 그리드 & 깔끔한 설명) -->
       <section id="module-section" class="section-card">
         <div class="section-title">
           <span>2. 10대 핵심 모듈 (완벽 2행 5열 디지털 개편)</span>
         </div>
-        <p style="font-size: 0.95rem; color: var(--text-sub);">
-          원하시는 모듈을 선택하시면 양파 껍질 구조의 독립적인 처리 프로세스가 즉시 확장됩니다.
+        <p style="font-size: 1.02rem; color: var(--text-sub);">
+          원하시는 모듈을 선택하시면 각 모듈에 대한 직관적인 설명과 핵심 기능 프로세스가 즉시 확장됩니다.
         </p>
         
         <div class="module-grid-2x5">
@@ -438,15 +465,15 @@
           <button class="module-btn" onclick="showProcess('p10')">10. 파이수량</button>
         </div>
 
-        <!-- 양파 껍질 프로세스 상세 뷰어 -->
+        <!-- 모듈 상세 설명 및 프로세스 뷰어 -->
         <div id="process-display" class="process-view active">
-          <span id="step-badge" class="step-badge">보안 인증 완료</span>
-          <h4 id="process-title" style="color: var(--neon-cyan); margin: 12px 0 8px 0; font-size: 1.35rem;">1. 지갑연결 프로세스</h4>
-          <p id="process-desc" style="font-size: 1.05rem; color: #fff; margin-bottom: 12px;">보안 강화된 하드웨어 월렛 및 생체 인증 연동 단계입니다.</p>
+          <span id="step-badge" class="step-badge">지갑연결 완료</span>
+          <h4 id="process-title" style="color: var(--neon-cyan); margin: 12px 0 10px 0; font-size: 1.4rem;">1. 지갑연결 (Wallet Connection)</h4>
+          <p id="process-desc" style="font-size: 1.1rem; color: #fff; margin-bottom: 14px;">안전한 블록체인 지갑 주소와 생체 인증(지문/Face ID)을 간편하게 연동하여 자산을 안전하게 보호합니다.</p>
           <ul id="process-steps" class="process-step-list">
-            <li><strong>1단계:</strong> 사용자 디바이스 보안 영역(Secure Enclave) 접근 권한 승인</li>
-            <li><strong>2단계:</strong> 생체 인증(지문/Face ID) 또는 마스터 패스워드 대조</li>
-            <li><strong>3단계:</strong> 분산 노드 네트워크 세션 생성 및 지갑 주소 활성화 완료</li>
+            <li><strong>간편 연동:</strong> 하드웨어 월렛 및 생체 인식을 통한 원클릭 안전 연결</li>
+            <li><strong>보안 강화:</strong> 기기 내 보안 영역을 통한 개인키 암호화 보호</li>
+            <li><strong>실시간 동기화:</strong> 분산 노드 네트워크와 즉시 세션 활성화 완료</li>
           </ul>
         </div>
       </section>
@@ -469,7 +496,7 @@
     <div id="tab-whitepaper" class="tab-content">
       <section class="section-card">
         <div class="section-title">3. 백서 100선 전문 라이브러리 (WP-01 ~ WP-100 전권 수록)</div>
-        <p style="font-size: 0.98rem; color: var(--text-sub); margin-bottom: 20px;">
+        <p style="font-size: 1.02rem; color: var(--text-sub); margin-bottom: 22px;">
           HK WorldBank 플랫폼의 아키텍처, 경제 모델, 글로벌 정책을 담은 100가지 핵심 백서 전문입니다.
         </p>
 
@@ -652,7 +679,7 @@
     <div id="tab-faq" class="tab-content">
       <section class="section-card">
         <div class="section-title">4. FAQ 20선 (이용 안내 및 필수 마스터 가이드)</div>
-        <p style="font-size: 0.98rem; color: var(--text-sub); margin-bottom: 20px;">
+        <p style="font-size: 1.02rem; color: var(--text-sub); margin-bottom: 22px;">
           사용자들이 플랫폼 이용 시 가장 자주 묻는 20가지 핵심 질문과 답변입니다.
         </p>
 
@@ -772,17 +799,23 @@
   <footer class="media-footer">
     <div class="section-title" style="margin-bottom: 20px;">공식 소셜 채널 바로가기</div>
     <div class="media-grid">
-      <a href="https://youtube.com" target="_blank" class="media-card youtube">
+      <a href="https://youtube.com/@Hyekong2026" target="_blank" class="media-card youtube">
         <div class="media-icon">▶️</div>
-        <div class="media-title">YouTube 공식 채널</div>
+        <div class="media-title">YouTube 공식 채널 (@Hyekong2026)</div>
         <span class="media-badge">실시간 스트리밍 & 튜토리얼</span>
       </a>
-      <a href="https://tiktok.com" target="_blank" class="media-card tiktok">
+      <a href="https://tiktok.com/@hyekong2026" target="_blank" class="media-card tiktok">
         <div class="media-icon">🎵</div>
-        <div class="media-title">TikTok 공식 채널</div>
+        <div class="media-title">TikTok 공식 채널 (@hyekong2026)</div>
         <span class="media-badge">숏폼 하이라이트 & 글로벌 캠페인</span>
       </a>
     </div>
+  </footer>
+
+  <!-- 최하단 카피라이트 및 공식 이메일 푸터 -->
+  <footer class="site-footer">
+    <p><strong>HK WorldBank Group</strong> — All Rights Reserved.</p>
+    <p>공식 이메일 문의: <a href="mailto:support@hkwb.world">support@hkwb.world</a> / <a href="mailto:ljw2358@github.io">ljw2358@github.io</a></p>
   </footer>
 
   <script>
@@ -821,7 +854,7 @@
       });
     }
 
-    // 2번 10대 모듈 - 독립적 양파 껍질 프로세스 상세 출력 함수 (2행 5열 연동)
+    // 2번 10대 모듈 - 각 모듈별 직관적인 설명과 핵심 프로세스 출력 함수
     function showProcess(processId) {
       const buttons = document.querySelectorAll('.module-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
@@ -833,110 +866,110 @@
       const desc = document.getElementById('process-desc');
       const stepsList = document.getElementById('process-steps');
 
-      const processDatabase = {
+      const moduleDatabase = {
         'p1': {
-          badge: '보안 인증 완료',
-          title: '1. 지갑연결 프로세스 (Wallet Connection)',
-          desc: '보안 강화된 하드웨어 월렛 및 생체 인증 연동 단계입니다.',
+          badge: '지갑연결 완료',
+          title: '1. 지갑연결 (Wallet Connection)',
+          desc: '안전한 블록체인 지갑 주소와 생체 인증(지문/Face ID)을 간편하게 연동하여 자산을 안전하게 보호합니다.',
           steps: [
-            '1단계: 사용자 디바이스 보안 영역(Secure Enclave) 접근 권한 승인',
-            '2단계: 생체 인증(지문/Face ID) 또는 마스터 패스워드 대조',
-            '3단계: 분산 노드 네트워크 세션 생성 및 지갑 주소 활성화 완료'
+            '간편 연동: 하드웨어 월렛 및 생체 인식을 통한 원클릭 안전 연결',
+            '보안 강화: 기기 내 보안 영역을 통한 개인키 암호화 보호',
+            '실시간 동기화: 분산 노드 네트워크와 즉시 세션 활성화 완료'
           ]
         },
         'p2': {
-          badge: 'P2P 노드 전송',
-          title: '2. 송금 프로세스 (Secure Transfer)',
-          desc: '블록체인 노드 간 P2P 실시간 암호화 송금 레이어입니다.',
+          badge: '간편 송금',
+          title: '2. 송금 (Secure Transfer)',
+          desc: '전 세계 어디서나 지연 없이 빠르고 간편하게 자산을 주고받는 실시간 송금 시스템입니다.',
           steps: [
-            '1단계: 수신자 주소 유효성 검증 및 네트워크 가스피(Gas Fee) 최적화 산정',
-            '2단계: 다중 서명(Multi-Sig) 승인 및 스마트 계약 보안 검증',
-            '3단계: 메인넷 블록 생성 완료 및 트랜잭션 최종 확정 알림 전송'
+            '주소 확인: 수신자 지갑 주소 및 연락처 간편 매칭',
+            '최저 수수료: 네트워크 가스피 최적화 적용으로 부담 최소화',
+            '즉시 전송: 블록체인 트랜잭션 즉시 확정 및 전송 완료'
           ]
         },
         'p3': {
           badge: '실시간 정산',
-          title: '3. 결제 프로세스 (Global Payment)',
-          desc: '온·오프라인 머천트 간편 결제 및 실시간 정산 처리 시스템입니다.',
+          title: '3. 결제 (Global Payment)',
+          desc: '온·오프라인 가맹점에서 QR코드와 NFC를 통해 실시간으로 환산 및 정산되는 간편 결제 서비스입니다.',
           steps: [
-            '1단계: QR코드 스캔 또는 NFC 단말기 프로토콜 핸드셰이크 개시',
-            '2단계: 실시간 환율 적용 및 결제 토큰 가치 자동 계산',
-            '3단계: 가맹점 즉시 입금 완료 및 디지털 영수증 발급'
+            '스캔 결제: 가맹점 QR코드 스캔 또는 NFC 터치 즉시 실행',
+            '자동 환산: 실시간 환율 적용 및 결제 자산 자동 계산',
+            '즉시 완료: 가맹점 실시간 입금 및 전자 영수증 발행'
           ]
         },
         'p4': {
-          badge: '원금 보장 락업',
-          title: '4. 예치 프로세스 (Vault Deposit)',
-          desc: '안전한 원금 보장형 디지털 자산 예치 및 이자 스케줄러입니다.',
+          badge: '원금 보장 예치',
+          title: '4. 예치 (Vault Deposit)',
+          desc: '디지털 자산을 안전하게 락업하고 원금 보장과 함께 안정적인 이자 수익을 누리는 예치 서비스입니다.',
           steps: [
-            '1단계: 예치 기간 및 이율 플랜 선택 (30일 / 90일 / 365일)',
-            '2단계: 스마트 계약(Smart Contract) 자산 락업 설정 완료',
-            '3단계: 실시간 누적 이자 발생 시뮬레이션 및 대시보드 반영'
+            '플랜 선택: 예치 기간(30일/90일/365일) 및 목표 이율 설정',
+            '스마트 계약: 자산 안전 락업 설정 및 자동 이자 스케줄러 가동',
+            '수익 실현: 실시간 누적 이자 확인 및 대시보드 반영'
           ]
         },
         'p5': {
-          badge: '자동 분배',
-          title: '5. 보상 프로세스 (Reward Distribution)',
-          desc: '플랫폼 기여도 기반 자동 보상 분배 알고리즘 가동 프로세스입니다.',
+          badge: '자동 보상',
+          title: '5. 보상 (Reward Distribution)',
+          desc: '플랫폼 활동 및 기여도에 따라 투명하게 산정되어 실시간으로 지급되는 보상 시스템입니다.',
           steps: [
-            '1단계: 사용자 기여도 지표 수집 (활동량, 노드 기여도 산출)',
-            '2단계: 보상 풀(Pool) 자동 정산 계산 및 검증',
-            '3단계: 지갑 잔액 실시간 지급 및 알림 메시지 발송'
+            '기여도 산출: 활동량 및 생태계 기여 지표 자동 측정',
+            '보상 정산: 보상 풀(Pool)에서 공정하게 계산 및 검증',
+            '실시간 지급: 사용자 지갑 잔액으로 즉시 보상 지급 완료'
           ]
         },
         'p6': {
           badge: '글로벌 UBI 실행',
-          title: '6. 기본소득 프로세스 (Global UBI)',
-          desc: '전 세계 소외계층 대상 기본소득(UBI) 스마트 계약 분배입니다.',
+          title: '6. 기본소득 (Global UBI)',
+          desc: '글로벌 순수익의 일부를 전 세계 소외계층에게 투명하게 환원하여 지급하는 UBI 기본소득 모델입니다.',
           steps: [
-            '1단계: 순수익 배분 풀(Pool) 자동 적립 현황 파악',
-            '2단계: 글로벌 수혜 대상자 자격 요건 스캔 및 검증',
-            '3단계: 투명한 UBI 정기 자동 지급 실행 및 온체인 기록'
+            '순수익 적립: 플랫폼 운영 순수익의 30%~60% UBI 풀 적립',
+            '자격 검증: 글로벌 수혜 대상자 자격 요건 스마트 계약 검증',
+            '정기 지급: 투명한 기본소득 자동 분배 및 온체인 기록'
           ]
         },
         'p7': {
-          badge: '최저 수수료 스왑',
-          title: '7. 토큰스왑 프로세스 (Token Swap)',
-          desc: '이종 자산 및 통화 간 최저 수수료 교환 메커니즘입니다.',
+          badge: '토큰 교환',
+          title: '7. 토큰스왑 (Token Swap)',
+          desc: '이종 자산 및 통화 간 최저 수수료와 최적의 비율로 즉시 교환해 주는 토큰 교환 서비스입니다.',
           steps: [
-            '1단계: 스왑 대상 토큰 페어(Pair) 선택 및 유동성 확인',
-            '2단계: 슬리피지(Slippage) 허용 범위 설정 및 최적 경로 탐색',
-            '3단계: 유동성 풀 기반 즉시 교환 완료 및 자산 포트폴리오 갱신'
+            '페어 선택: 교환하고자 하는 대상 토큰 및 수량 지정',
+            '최적 경로: 슬리피지 최소화 및 최저 수수료 경로 탐색',
+            '즉시 교환: 유동성 풀 기반 원클릭 스왑 및 잔액 갱신'
           ]
         },
         'p8': {
-          badge: 'AMM 오더북 연동',
-          title: '8. DEX스왑 프로세스 (Decentralized Exchange)',
-          desc: '탈중앙화 오더북 및 AMM 자동 마켓 메이킹 연동 프로세스입니다.',
+          badge: 'DEX 거래',
+          title: '8. DEX스왑 (Decentralized Exchange)',
+          desc: '중개자 없이 탈중앙화 오더북과 AMM 유동성 풀을 통해 직접 자산을 교환하는 DEX 시스템입니다.',
           steps: [
-            '1단계: DEX 유동성 풀 실시간 호가 조회 및 스프레드 계산',
-            '2단계: 최적 경로 라우팅(Routing) 알고리즘 적용',
-            '3단계: 트랜잭션 체결 및 포트폴리오 자산 실시간 갱신'
+            '호가 조회: 탈중앙 유동성 풀 실시간 스프레드 확인',
+            '자동 체결: AMM 알고리즘을 통한 스마트 계약 즉시 체결',
+            '자산 반영: 내 지갑 포트폴리오 자산 실시간 갱신'
           ]
         },
         'p9': {
-          badge: '거버넌스 채굴',
-          title: '9. LP스테이킹 프로세스 (Liquidity Provider Staking)',
-          desc: '유동성 공급 증명(LP) 및 추가 보상 마이닝 프로세스입니다.',
+          badge: 'LP 스테이킹',
+          title: '9. LP스테이킹 (Liquidity Staking)',
+          desc: '유동성 풀에 자산을 공급하고 획득한 LP 토큰을 예치하여 추가 보상과 수수료 수익을 얻는 서비스입니다.',
           steps: [
-            '1단계: LP 토큰 예치 승인(Approve) 및 스마트 계약 바인딩',
-            '2단계: 스테이킹 계약 활성화 및 지분율 실시간 계산',
-            '3단계: 수수료 수익 및 거버넌스 토큰 수령 완료'
+            '토큰 공급: DEX 유동성 풀 자산 예치 및 LP 토큰 획득',
+            '스테이킹 바인딩: 스마트 계약에 LP 토큰 예치 등록',
+            '수익 수령: 거래 수수료 수익 및 추가 거버넌스 토큰 수령'
           ]
         },
         'p10': {
           badge: '메인넷 동기화',
-          title: '10. 파이수량 프로세스 (Pi Ledger Sync)',
-          desc: '메인넷 피어 노드 및 Pi Network 수량 실시간 동기화 프로세스입니다.',
+          title: '10. 파이수량 (Pi Ledger Sync)',
+          desc: 'Pi Network 메인넷과의 안전한 연동을 통해 채굴 및 보유 수량을 실시간으로 동기화합니다.',
           steps: [
-            '1단계: 파이 네트워크 메인넷 API 안전 연결',
-            '2단계: 채굴 및 전송된 Pi 수량 무결성 검증 수행',
-            '3단계: 지갑 메인 화면 잔액 실시간 동기화 완료'
+            '메인넷 연결: Pi Network 공식 API 안전 보안 연결',
+            '무결성 검증: 채굴 및 전송된 Pi 수량 잔액 검증',
+            '실시간 동기화: 지갑 메인 화면에 최종 보유 수량 즉시 반영'
           ]
         }
       };
 
-      const data = processDatabase[processId];
+      const data = moduleDatabase[processId];
       if (data) {
         badge.innerText = data.badge;
         title.innerText = data.title;
