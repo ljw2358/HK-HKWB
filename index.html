@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HK WorldBank - Global Digital Banking Platform (Ultimate Master Edition v5.6)</title>
+  <title>HK WorldBank - Global Digital Banking Platform (Vibrant Master Edition v5.7)</title>
   <style>
     /* ==========================================
-       [Cyberpunk Dark Theme & Master Base Styles]
+       [Vibrant Neon Cyberpunk Theme & Master Styles]
        ========================================== */
     :root {
-      --bg-primary: #0b0f19;
-      --bg-secondary: #0f172a;
-      --bg-card: #1e293b;
-      --accent-blue: #38bdf8;
-      --accent-purple: #818cf8;
-      --accent-green: #4ade80;
-      --text-main: #f8fafc;
-      --text-sub: #94a3b8;
-      --border-color: #334155;
+      --bg-primary: #05050a;
+      --bg-secondary: #0b0f19;
+      --bg-card: #131b2e;
+      --neon-cyan: #00f2fe;
+      --neon-purple: #b5acfc;
+      --neon-pink: #ff007f;
+      --neon-green: #00ffcc;
+      --neon-yellow: #ffb700;
+      --text-main: #ffffff;
+      --text-sub: #a0aec0;
+      --border-glow: rgba(0, 242, 254, 0.4);
     }
 
     * {
@@ -34,66 +36,68 @@
       padding-bottom: 90px;
     }
 
-    /* 1. 상단 프로필/헤더 (로고 강조, KR 한국어 표기) */
+    /* 상단 프로필/헤더 (화려한 네온 로고 및 뱃지) */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 24px;
-      background-color: var(--bg-secondary);
-      border-bottom: 2px solid var(--accent-blue);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      padding: 18px 24px;
+      background: linear-gradient(135deg, #0f172a, #1e1b4b);
+      border-bottom: 3px solid var(--neon-cyan);
+      box-shadow: 0 4px 25px rgba(0, 242, 254, 0.3);
     }
     .brand-logo {
       display: flex;
       flex-direction: column;
     }
     .brand-title {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 900;
-      color: var(--accent-blue);
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       letter-spacing: -0.5px;
       text-transform: uppercase;
-      text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+      filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.6));
     }
     .brand-subtitle {
-      font-size: 0.75rem;
-      color: var(--accent-purple);
+      font-size: 0.78rem;
+      color: var(--neon-purple);
       font-weight: 700;
-      letter-spacing: 1.2px;
+      letter-spacing: 1.5px;
     }
     .language-badge {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       font-weight: bold;
-      color: var(--text-main);
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: 1px solid var(--accent-blue);
-      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+      color: #fff;
+      background: linear-gradient(135deg, #312e81, #1e1b4b);
+      padding: 8px 18px;
+      border-radius: 24px;
+      border: 2px solid var(--neon-purple);
+      box-shadow: 0 0 15px rgba(181, 172, 252, 0.4);
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
-    /* 상단 네비게이션 탭 (메인 홈, 백서, FAQ, 정책법안, 분산연동망) */
+    /* 통합 네비게이션 탭 (컬러풀 하이라이트) */
     .nav-tabs {
       display: flex;
       overflow-x: auto;
-      background: #070b14;
-      border-bottom: 1px solid var(--border-color);
+      background: #030712;
+      border-bottom: 2px solid #1e293b;
       white-space: nowrap;
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 4px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      padding: 6px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
     }
     .nav-tabs::-webkit-scrollbar {
       height: 4px;
     }
     .nav-tabs::-webkit-scrollbar-thumb {
-      background: var(--border-color);
+      background: var(--neon-cyan);
     }
     .nav-tabs button {
       flex: 1;
@@ -101,24 +105,24 @@
       background: none;
       border: none;
       color: var(--text-sub);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.95rem;
       cursor: pointer;
       border-bottom: 3px solid transparent;
       transition: all 0.3s ease;
     }
     .nav-tabs button:hover {
-      color: var(--text-main);
-      background: rgba(56, 189, 248, 0.05);
+      color: var(--neon-cyan);
+      background: rgba(0, 242, 254, 0.08);
     }
     .nav-tabs button.active {
-      color: var(--accent-blue);
-      border-bottom-color: var(--accent-blue);
-      background: var(--bg-card);
-      text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+      color: var(--neon-cyan);
+      border-bottom-color: var(--neon-cyan);
+      background: rgba(19, 27, 46, 0.9);
+      text-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
     }
 
-    /* 메인 콘텐츠 영역 */
+    /* 메인 콘텐츠 컨테이너 */
     main {
       padding: 24px;
       max-width: 1100px;
@@ -126,26 +130,27 @@
     }
     .section-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
+      border: 2px solid #1e3a8a;
+      border-radius: 18px;
       padding: 28px;
       margin-bottom: 28px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-      border-top: 4px solid var(--accent-blue);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(0, 242, 254, 0.05);
+      border-top: 5px solid var(--neon-cyan);
     }
     .section-title {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #f8fafc;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #fff;
       margin-bottom: 18px;
       display: flex;
       align-items: center;
       gap: 12px;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 2px solid #1e293b;
       padding-bottom: 14px;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
     }
 
-    /* 2번 10대 핵심 모듈 (완벽한 2행 5열 그리드) */
+    /* 2번 10대 핵심 모듈 (다채롭고 화려한 2행 5열 그리드) */
     .module-grid-2x5 {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -153,107 +158,111 @@
       margin-top: 16px;
     }
     .module-btn {
-      background: linear-gradient(180deg, #1e293b, #0f172a);
-      border: 1px solid var(--accent-blue);
-      color: var(--text-main);
+      background: linear-gradient(135deg, #1e1b4b, #312e81);
+      border: 2px solid var(--neon-purple);
+      color: #fff;
       padding: 18px 8px;
-      border-radius: 12px;
+      border-radius: 14px;
       font-size: 0.88rem;
-      font-weight: 800;
+      font-weight: 900;
       cursor: pointer;
       text-align: center;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(181, 172, 252, 0.2);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 80px;
+      min-height: 82px;
     }
     .module-btn:hover {
-      border-color: var(--accent-green);
-      background: #1e293b;
-      color: var(--accent-green);
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+      border-color: var(--neon-green);
+      background: linear-gradient(135deg, #064e3b, #065f46);
+      color: var(--neon-green);
+      transform: translateY(-5px) scale(1.04);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
     }
     .module-btn.active {
-      background: var(--accent-blue);
-      color: #0b0f19;
+      background: linear-gradient(135deg, #0284c7, var(--neon-cyan));
+      color: #030712;
       border-color: #fff;
       font-weight: 900;
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.8);
     }
 
-    /* 양파 껍질 세부 프로세스 뷰어 */
+    /* 양파 껍질 세부 프로세스 뷰어 (네온 다중 테두리) */
     .process-view {
       display: none;
-      background: linear-gradient(135deg, #070b14, #111827);
-      border: 2px dashed var(--accent-blue);
-      border-radius: 14px;
-      padding: 24px;
+      background: linear-gradient(135deg, #030712, #0f172a);
+      border: 2px dashed var(--neon-cyan);
+      border-radius: 16px;
+      padding: 26px;
       margin-top: 24px;
       animation: fadeIn 0.4s ease-in-out;
-      box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.15);
+      box-shadow: inset 0 0 25px rgba(0, 242, 254, 0.2);
     }
     .process-view.active {
       display: block;
     }
     .step-badge {
       display: inline-block;
-      background: var(--accent-blue);
-      color: #0b0f19;
+      background: var(--neon-pink);
+      color: #fff;
       font-weight: 900;
-      padding: 5px 14px;
-      border-radius: 15px;
-      font-size: 0.85rem;
-      margin-bottom: 8px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      margin-bottom: 10px;
+      box-shadow: 0 0 12px rgba(255, 0, 127, 0.6);
     }
     .process-step-list {
       margin-top: 14px;
       padding-left: 24px;
     }
     .process-step-list li {
-      margin-bottom: 10px;
-      font-size: 0.98rem;
-      color: var(--text-sub);
+      margin-bottom: 12px;
+      font-size: 1rem;
+      color: var(--text-main);
       line-height: 1.6;
     }
     .process-step-list li::marker {
-      color: var(--accent-green);
+      color: var(--neon-green);
       font-weight: bold;
     }
 
-    /* 탭 콘텐츠 제어 */
+    /* 탭 제어 */
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
     ul { list-style: disc; padding-left: 20px; }
     li { margin-bottom: 10px; color: var(--text-sub); font-size: 0.98rem; }
-    li strong { color: var(--text-main); }
+    li strong { color: #fff; }
 
-    /* 상세 문서 박스 스타일 */
+    /* 상세 문서 박스 스타일 (화려한 네온 보더) */
     .doc-box {
       background: #0f172a;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 16px;
-      transition: all 0.2s;
+      border: 2px solid #3b82f6;
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
     }
     .doc-box:hover {
-      border-color: var(--accent-purple);
-      box-shadow: 0 4px 12px rgba(129, 140, 248, 0.15);
+      border-color: var(--neon-green);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+      transform: translateY(-2px);
     }
     .doc-box h5 {
-      color: var(--accent-blue);
+      color: var(--neon-cyan);
       margin-bottom: 8px;
-      font-size: 1.12rem;
-      font-weight: 700;
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-shadow: 0 0 5px rgba(0, 242, 254, 0.4);
     }
     .doc-box p {
       color: var(--text-sub);
-      font-size: 0.96rem;
+      font-size: 0.98rem;
       line-height: 1.6;
     }
 
@@ -262,20 +271,20 @@
       width: 100%;
       padding: 16px 20px;
       background: #0f172a;
-      border: 2px solid var(--border-color);
-      border-radius: 12px;
-      color: var(--text-main);
-      font-size: 1rem;
+      border: 2px solid var(--neon-purple);
+      border-radius: 14px;
+      color: #fff;
+      font-size: 1.05rem;
       margin-bottom: 24px;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.6), 0 0 10px rgba(181, 172, 252, 0.2);
     }
     .search-input:focus {
       outline: none;
-      border-color: var(--accent-blue);
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
     }
 
-    /* 최하단 SNS 미디어 고정 섹션 (YouTube & TikTok) */
+    /* 최하단 고정 SNS 미디어 섹션 (YouTube & TikTok 화려한 카드) */
     .media-footer {
       max-width: 1100px;
       margin: 40px auto 20px auto;
@@ -288,53 +297,57 @@
     }
     .media-card {
       background: var(--bg-card);
-      border-radius: 16px;
-      padding: 22px;
+      border-radius: 18px;
+      padding: 24px;
       text-align: center;
-      border: 2px solid var(--border-color);
+      border: 2px solid;
       text-decoration: none;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
       transition: all 0.3s ease;
     }
     .media-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px) scale(1.02);
     }
     .media-card.youtube {
       border-color: #ff0000;
-      background: linear-gradient(180deg, #1e293b, #1a0505);
+      background: linear-gradient(135deg, #1e1b4b, #450a0a);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
     }
     .media-card.youtube:hover {
-      box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
     }
     .media-card.tiktok {
-      border-color: #00f2fe;
-      background: linear-gradient(180deg, #1e293b, #051923);
+      border-color: var(--neon-cyan);
+      background: linear-gradient(135deg, #1e1b4b, #042f2e);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
     }
     .media-card.tiktok:hover {
-      box-shadow: 0 0 25px rgba(0, 242, 254, 0.5);
+      box-shadow: 0 0 30px rgba(0, 242, 254, 0.7);
     }
     .media-icon {
-      font-size: 3rem;
-      margin-bottom: 8px;
+      font-size: 3.2rem;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
     }
     .media-title {
-      font-size: 1.15rem;
-      font-weight: 800;
+      font-size: 1.2rem;
+      font-weight: 900;
       color: #fff;
     }
     .media-badge {
       display: inline-block;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: bold;
-      padding: 4px 12px;
-      border-radius: 12px;
-      margin-top: 8px;
-      background: #334155;
-      color: #e2e8f0;
+      padding: 6px 14px;
+      border-radius: 15px;
+      margin-top: 10px;
+      background: rgba(0,0,0,0.5);
+      color: var(--neon-yellow);
+      border: 1px solid var(--neon-yellow);
     }
 
     @keyframes fadeIn {
@@ -344,8 +357,8 @@
 
     /* 반응형 모바일 최적화 */
     @media (max-width: 768px) {
-      header { padding: 12px 16px; }
-      .brand-title { font-size: 1.25rem; }
+      header { padding: 14px 18px; }
+      .brand-title { font-size: 1.35rem; }
       main { padding: 12px; }
       .module-grid-2x5 {
         grid-template-columns: repeat(5, 1fr);
@@ -353,18 +366,18 @@
       }
       .module-btn {
         padding: 10px 2px;
-        font-size: 0.72rem;
-        min-height: 58px;
-        border-radius: 8px;
+        font-size: 0.74rem;
+        min-height: 60px;
+        border-radius: 10px;
       }
-      .section-card { padding: 16px; border-radius: 12px; }
-      .media-grid { grid-template-columns: 1fr; gap: 14px; }
+      .section-card { padding: 18px; border-radius: 14px; }
+      .media-grid { grid-template-columns: 1fr; gap: 16px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 1. 상단 프로필/헤더 (로고 강조, KR 한국어 표기) -->
+  <!-- 상단 헤더 -->
   <header>
     <div class="brand-logo">
       <h1 class="brand-title">HK WorldBank</h1>
@@ -372,7 +385,7 @@
     </div>
     <div class="language-badge">
       <span>🇰🇷</span>
-      <span>KR 한국어</span>
+      <span>KR 한국어 (60개국 지원)</span>
     </div>
   </header>
 
@@ -386,9 +399,7 @@
   </div>
 
   <main>
-    <!-- ==========================================
-       [1] 메인 홈 탭 콘텐츠
-       ========================================== -->
+    <!-- [1] 메인 홈 탭 콘텐츠 -->
     <div id="tab-main" class="tab-content active">
       
       <!-- 1번 고객센터 AGI '삐니' -->
@@ -396,12 +407,12 @@
         <div class="section-title">
           <span>1. 고객센터 AGI '삐니' (AI 실시간 지원)</span>
         </div>
-        <p style="font-size: 0.95rem; color: var(--text-sub); margin-bottom: 16px;">
-          전 세계 언어를 실시간 지원하는 AI 인텔리전스 고객센터가 24시간 무중단 가동 중입니다.
+        <p style="font-size: 1rem; color: var(--text-sub); margin-bottom: 16px;">
+          전 세계 60개국 언어를 실시간 동기화하는 AGI 인텔리전스 고객센터가 24시간 무중단 가동 중입니다.
         </p>
         <div class="doc-box">
-          <h5 style="color: var(--accent-green);">● 상태: 실시간 AGI 엔진 가동 중</h5>
-          <p>글로벌 60개국 언어 자동 동기화 및 생체 인식 보안 금융 어시스턴트 서비스 제공.</p>
+          <h5 style="color: var(--neon-green);">● 상태: 실시간 AGI 엔진 완벽 가동 중</h5>
+          <p>생체 인식 보안 인증 및 다국어 실시간 금융 어시스턴트 서비스 상시 제공.</p>
         </div>
       </section>
 
@@ -410,7 +421,7 @@
         <div class="section-title">
           <span>2. 10대 핵심 모듈 (완벽 2행 5열 디지털 개편)</span>
         </div>
-        <p style="font-size: 0.9rem; color: var(--text-sub);">
+        <p style="font-size: 0.95rem; color: var(--text-sub);">
           원하시는 모듈을 선택하시면 양파 껍질 구조의 독립적인 처리 프로세스가 즉시 확장됩니다.
         </p>
         
@@ -430,8 +441,8 @@
         <!-- 양파 껍질 프로세스 상세 뷰어 -->
         <div id="process-display" class="process-view active">
           <span id="step-badge" class="step-badge">보안 인증 완료</span>
-          <h4 id="process-title" style="color: var(--accent-blue); margin: 12px 0 8px 0; font-size: 1.3rem;">1. 지갑연결 프로세스</h4>
-          <p id="process-desc" style="font-size: 1rem; color: var(--text-main); margin-bottom: 12px;">보안 강화된 하드웨어 월렛 및 생체 인증 연동 단계입니다.</p>
+          <h4 id="process-title" style="color: var(--neon-cyan); margin: 12px 0 8px 0; font-size: 1.35rem;">1. 지갑연결 프로세스</h4>
+          <p id="process-desc" style="font-size: 1.05rem; color: #fff; margin-bottom: 12px;">보안 강화된 하드웨어 월렛 및 생체 인증 연동 단계입니다.</p>
           <ul id="process-steps" class="process-step-list">
             <li><strong>1단계:</strong> 사용자 디바이스 보안 영역(Secure Enclave) 접근 권한 승인</li>
             <li><strong>2단계:</strong> 생체 인증(지문/Face ID) 또는 마스터 패스워드 대조</li>
@@ -440,7 +451,7 @@
         </div>
       </section>
 
-      <!-- 5번 순수익 배분 모델 (메인 유지) -->
+      <!-- 5번 순수익 배분 모델 -->
       <section class="section-card">
         <div class="section-title">
           <span>5. 순수익 배분 모델 (Global UBI & Foundation)</span>
@@ -454,13 +465,11 @@
 
     </div>
 
-    <!-- ==========================================
-       [3] 백서 100선 전용 탭 (WP-01 ~ WP-100 전체 전권 수록)
-       ========================================== -->
+    <!-- [3] 백서 100선 전용 탭 (WP-01 ~ WP-100 전체 전권 수록) -->
     <div id="tab-whitepaper" class="tab-content">
       <section class="section-card">
         <div class="section-title">3. 백서 100선 전문 라이브러리 (WP-01 ~ WP-100 전권 수록)</div>
-        <p style="font-size: 0.95rem; color: var(--text-sub); margin-bottom: 20px;">
+        <p style="font-size: 0.98rem; color: var(--text-sub); margin-bottom: 20px;">
           HK WorldBank 플랫폼의 아키텍처, 경제 모델, 글로벌 정책을 담은 100가지 핵심 백서 전문입니다.
         </p>
 
@@ -639,13 +648,11 @@
       </section>
     </div>
 
-    <!-- ==========================================
-       [4] FAQ 20선 전용 탭 (Q1 ~ Q20 전체 전권 수록)
-       ========================================== -->
+    <!-- [4] FAQ 20선 전용 탭 (Q1 ~ Q20 전체 전권 수록) -->
     <div id="tab-faq" class="tab-content">
       <section class="section-card">
         <div class="section-title">4. FAQ 20선 (이용 안내 및 필수 마스터 가이드)</div>
-        <p style="font-size: 0.95rem; color: var(--text-sub); margin-bottom: 20px;">
+        <p style="font-size: 0.98rem; color: var(--text-sub); margin-bottom: 20px;">
           사용자들이 플랫폼 이용 시 가장 자주 묻는 20가지 핵심 질문과 답변입니다.
         </p>
 
@@ -732,9 +739,7 @@
       </section>
     </div>
 
-    <!-- ==========================================
-       [6·7] 정책 및 법안 전용 탭
-       ========================================== -->
+    <!-- [6·7] 정책 및 법안 전용 탭 -->
     <div id="tab-policy" class="tab-content">
       <section class="section-card">
         <div class="section-title">6 & 7. 정책 법안 및 준수 규정 (Policies & KYC/AML)</div>
@@ -750,9 +755,7 @@
       </section>
     </div>
 
-    <!-- ==========================================
-       [8·10] 분산 연동망 전용 탭
-       ========================================== -->
+    <!-- [8·10] 분산 연동망 전용 탭 -->
     <div id="tab-network" class="tab-content">
       <section class="section-card">
         <div class="section-title">8 & 10. 분산 연동망 프로세스 상세 설계</div>
