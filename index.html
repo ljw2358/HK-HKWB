@@ -36,7 +36,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 70px;
+            height: 75px;
             background: rgba(10, 14, 23, 0.9);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
@@ -48,42 +48,39 @@
         }
 
         .logo {
-            font-size: 1.6rem;
+            font-size: 2.2rem;
             font-weight: 900;
             color: var(--accent-gold);
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .header-info {
             display: flex;
             align-items: center;
             gap: 20px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
-
-        .ref-badge {
-            background: rgba(123, 44, 191, 0.2);
-            border: 1px solid var(--accent-purple);
-            padding: 5px 12px;
-            border-radius: 20px;
-            color: #d8b4fe;
-        }
-        .ref-badge b { color: var(--accent-gold); }
 
         .agi-status {
             display: flex;
             align-items: center;
             gap: 8px;
             color: var(--accent-neon);
+            background: rgba(0, 242, 254, 0.08);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
         }
+
         .agi-status::before {
             content: '';
             display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 9px;
+            height: 9px;
             background: var(--accent-neon);
             border-radius: 50%;
-            box-shadow: 0 0 8px var(--accent-neon);
+            box-shadow: 0 0 10px var(--accent-neon);
         }
 
         .hamburger-btn {
@@ -94,7 +91,7 @@
             cursor: pointer;
         }
 
-        /* 2. HERO PAGE (SINGLE FIRST VIEW) */
+        /* 2. HERO PAGE (SINGLE HERO VIEW) */
         .hero-section {
             width: 100vw;
             height: 100vh;
@@ -109,25 +106,18 @@
 
         .hero-card {
             border: 2px solid rgba(212, 175, 55, 0.4);
-            padding: 60px 40px;
+            padding: 50px 40px;
             border-radius: 24px;
             background: rgba(19, 26, 41, 0.75);
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             max-width: 900px;
             width: 100%;
-            cursor: pointer;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .hero-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-gold);
         }
 
         .hero-title {
             font-size: 2.6rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -136,18 +126,44 @@
         .hero-sub {
             color: var(--accent-gold);
             font-size: 1.15rem;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
-        .scroll-down-btn {
-            display: inline-block;
-            padding: 12px 30px;
+        /* DUAL ENTER BUTTONS */
+        .hero-btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-web3 {
+            padding: 14px 28px;
             background: linear-gradient(90deg, var(--accent-purple), #4c1d95);
             color: white;
             border-radius: 30px;
             font-weight: bold;
+            font-size: 1rem;
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(123, 44, 191, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-internet {
+            padding: 14px 28px;
+            background: linear-gradient(90deg, #059669, #047857);
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-web3:hover, .btn-internet:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
         }
 
         /* 3. MAIN CONTENT CONTAINER */
@@ -168,7 +184,7 @@
             padding-left: 15px;
         }
 
-        /* DUAL BANKING SYSTEM (Web3 Digital Bank & Internet Bank) */
+        /* DUAL BANKING SYSTEM */
         .banking-system-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -182,16 +198,10 @@
             border-radius: 18px;
             padding: 30px;
             position: relative;
-            overflow: hidden;
         }
 
-        .bank-card.web3 {
-            border-color: var(--accent-purple);
-        }
-
-        .bank-card.internet {
-            border-color: var(--accent-gold);
-        }
+        .bank-card.web3 { border-color: var(--accent-purple); }
+        .bank-card.internet { border-color: var(--accent-gold); }
 
         .bank-badge {
             display: inline-block;
@@ -342,6 +352,7 @@
             .banking-system-grid, .media-grid { grid-template-columns: 1fr; }
             .modules-grid { grid-template-columns: repeat(2, 1fr); }
             .hero-title { font-size: 1.9rem; }
+            .hero-btn-group { flex-direction: column; }
         }
     </style>
 </head>
@@ -351,29 +362,31 @@
     <header>
         <div class="logo">HKWB</div>
         <div class="header-info">
-            <div class="ref-badge">추천인 ID: <b>njw2358</b> (UBI 우선순위)</div>
-            <div class="agi-status">60개국 AGI 실시간 가동 중</div>
+            <div class="agi-status">60개국 AGI 가동 중</div>
             <button class="hamburger-btn">☰</button>
         </div>
     </header>
 
     <!-- 2. HERO PAGE (SINGLE HERO VIEW) -->
     <section class="hero-section" id="hero">
-        <div class="hero-card" onclick="document.getElementById('main-content').scrollIntoView({behavior: 'smooth'})">
+        <div class="hero-card">
             <h1 class="hero-title">인류와 기술이 공존하는<br>차세대 디지털 금융 혁신</h1>
             <p class="hero-sub">10대 글로벌 보안 기술 & AI 기술 기반 글로벌 자율 금융 플랫폼</p>
-            <a href="#main-content" class="scroll-down-btn">본문 대시보드 진입하기 ↓</a>
+            <div class="hero-btn-group">
+                <a href="#web3-bank-sec" class="btn-web3" onclick="document.getElementById('web3-bank-sec').scrollIntoView({behavior: 'smooth'})">Web3 디지털 은행 진입하기 ↓</a>
+                <a href="#internet-bank-sec" class="btn-internet" onclick="document.getElementById('internet-bank-sec').scrollIntoView({behavior: 'smooth'})">인터넷 뱅크 진입하기 ↓</a>
+            </div>
         </div>
     </section>
 
     <!-- 3. MAIN CONTENT CONTAINER -->
     <div class="container" id="main-content">
 
-        <!-- DUAL BANKING SYSTEM (WEB3 DIGITAL BANK & INTERNET BANK) -->
+        <!-- DUAL BANKING SYSTEM -->
         <h2 class="section-title">글로벌 통합 뱅킹 시스템</h2>
         <div class="banking-system-grid">
-            <!-- 1. Web3 Digital Bank (HKWB) -->
-            <div class="bank-card web3">
+            <!-- Web3 Digital Bank (HKWB) -->
+            <div class="bank-card web3" id="web3-bank-sec">
                 <span class="bank-badge">Web3 디지털 뱅크</span>
                 <h3>HKWB (HK WORLD BANK)</h3>
                 <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">탈중앙화 기반 Pi Network 및 크립토 연동 시스템</p>
@@ -385,8 +398,8 @@
                 </div>
             </div>
 
-            <!-- 2. Internet Bank (HK BANK) -->
-            <div class="bank-card internet">
+            <!-- Internet Bank (HK BANK) -->
+            <div class="bank-card internet" id="internet-bank-sec">
                 <span class="bank-badge">인터넷 뱅크</span>
                 <h3>HK BANK</h3>
                 <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Web2 기반 법정화폐 예치·스마트 이율 계산 인터넷 은행</p>
@@ -418,7 +431,7 @@
         <h2 class="section-title">순수익 사회환원 (30%~60%) & UBI 분배 시스템</h2>
         <div class="ubi-box">
             <h3>투명한 실시간 사회환원 및 기본소득 분배 구조</h3>
-            <p style="color: var(--text-muted); margin-top: 5px;">기업 순이익 30% UBI 최우선 배정 (추천인 ID <b>njw2358</b> 회원 우선), 30% 회사 경영비, 최대 30% HK 사회재단 자본금 구성</p>
+            <p style="color: var(--text-muted); margin-top: 5px;">기업 순이익 30% UBI 배정, 30% 회사 경영비, 최대 30% HK 사회재단 자본금 구성</p>
             <div style="margin-top: 20px;">
                 <label>월간 순수익 가상 시뮬레이터 (KRW)</label>
                 <input type="range" min="100000000" max="1000000000" value="500000000" style="width: 100%; margin: 15px 0;">
@@ -466,7 +479,7 @@
             <div class="eco-card"><b>19. HK-FINTECH-LAB</b>탈중앙 Web3 금융 연구소</div>
         </div>
 
-        <!-- WHITEPAPER & COMPLIANCE (BLACK BORDER BOXES) -->
+        <!-- WHITEPAPER & COMPLIANCE -->
         <h2 class="section-title">백서 (Whitepaper v1.0) & 규제 준수</h2>
         <div class="black-box-container">
             <h3 style="margin-bottom: 15px; color: var(--accent-gold);">백서 핵심 서술 항목 (100개 항목 포함)</h3>
