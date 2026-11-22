@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK WLD | HKWB Digital Banking</title>
+    <title>HKWB | Web3 Digital & Internet Bank</title>
     <style>
         :root {
             --bg-dark: #0a0e17;
@@ -48,12 +48,11 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 900;
-            color: #fff;
+            color: var(--accent-gold);
             letter-spacing: 1px;
         }
-        .logo span { color: var(--accent-gold); }
 
         .header-info {
             display: flex;
@@ -106,14 +105,13 @@
             text-align: center;
             background: radial-gradient(circle at center, #1e1b4b 0%, #0a0e17 70%);
             padding: 0 20px;
-            position: relative;
         }
 
         .hero-card {
-            border: 2px solid rgba(212, 175, 55, 0.3);
+            border: 2px solid rgba(212, 175, 55, 0.4);
             padding: 60px 40px;
             border-radius: 24px;
-            background: rgba(19, 26, 41, 0.7);
+            background: rgba(19, 26, 41, 0.75);
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             max-width: 900px;
             width: 100%;
@@ -127,7 +125,7 @@
         }
 
         .hero-title {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 800;
             margin-bottom: 20px;
             background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
@@ -137,7 +135,7 @@
 
         .hero-sub {
             color: var(--accent-gold);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 30px;
         }
 
@@ -170,23 +168,45 @@
             padding-left: 15px;
         }
 
-        /* DASHBOARD SECTION */
-        .dashboard-grid {
+        /* DUAL BANKING SYSTEM (Web3 Digital Bank & Internet Bank) */
+        .banking-system-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
             margin-bottom: 60px;
         }
 
-        .card {
+        .bank-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 25px;
+            border-radius: 18px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
         }
 
+        .bank-card.web3 {
+            border-color: var(--accent-purple);
+        }
+
+        .bank-card.internet {
+            border-color: var(--accent-gold);
+        }
+
+        .bank-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .bank-card.web3 .bank-badge { background: var(--accent-purple); color: white; }
+        .bank-card.internet .bank-badge { background: var(--accent-gold); color: black; }
+
         .asset-balance {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--accent-gold);
             margin: 15px 0;
@@ -221,13 +241,11 @@
 
         /* UBI & SOCIAL IMPACT SLIDER */
         .ubi-box {
-            background: linear-gradient(135deg, rgba(123, 44, 191, 0.1) 0%, rgba(19, 26, 41, 1) 100%);
+            background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(19, 26, 41, 1) 100%);
             border: 1px solid var(--accent-purple);
+            border-radius: 16px;
+            padding: 30px;
             margin-bottom: 60px;
-        }
-
-        .slider-container {
-            margin-top: 20px;
         }
 
         /* AGI & MEDIA SECTION (50:50 SPLIT) */
@@ -278,7 +296,7 @@
             margin-bottom: 5px;
         }
 
-        /* WHITEPAPER & COMPLIANCE (BLACK BORDER BOXES) */
+        /* BLACK BORDER CONTAINER FOR COMPLIANCE & WHITEPAPER */
         .black-box-container {
             border: 2px solid #000;
             background: #05070c;
@@ -288,9 +306,8 @@
         }
 
         .whitepaper-list {
-            max-height: 300px;
+            max-height: 250px;
             overflow-y: auto;
-            padding-right: 10px;
         }
 
         .whitepaper-item {
@@ -321,11 +338,10 @@
             text-decoration: none;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 900px) {
+            .banking-system-grid, .media-grid { grid-template-columns: 1fr; }
             .modules-grid { grid-template-columns: repeat(2, 1fr); }
-            .dashboard-grid, .media-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 2rem; }
+            .hero-title { font-size: 1.9rem; }
         }
     </style>
 </head>
@@ -333,7 +349,7 @@
 
     <!-- 1. TOP HEADER -->
     <header>
-        <div class="logo">SK <span>WLD</span></div>
+        <div class="logo">HKWB</div>
         <div class="header-info">
             <div class="ref-badge">추천인 ID: <b>njw2358</b> (UBI 우선순위)</div>
             <div class="agi-status">60개국 AGI 실시간 가동 중</div>
@@ -345,7 +361,7 @@
     <section class="hero-section" id="hero">
         <div class="hero-card" onclick="document.getElementById('main-content').scrollIntoView({behavior: 'smooth'})">
             <h1 class="hero-title">인류와 기술이 공존하는<br>차세대 디지털 금융 혁신</h1>
-            <p class="hero-sub">HKWB 10대 분산 연동망 & AGI 기반 글로벌 자율 금융 플랫폼</p>
+            <p class="hero-sub">10대 글로벌 보안 기술 & AI 기술 기반 글로벌 자율 금융 플랫폼</p>
             <a href="#main-content" class="scroll-down-btn">본문 대시보드 진입하기 ↓</a>
         </div>
     </section>
@@ -353,29 +369,40 @@
     <!-- 3. MAIN CONTENT CONTAINER -->
     <div class="container" id="main-content">
 
-        <!-- DASHBOARD -->
-        <h2 class="section-title">개인 자산 상태 대시보드</h2>
-        <div class="dashboard-grid">
-            <div class="card">
-                <div>보유 자산 총액 (Testnet Pi & HK Tokens)</div>
-                <div class="asset-balance">314,159.000000 <span style="font-size: 1rem; color: #fff;">Pi</span></div>
-                <p style="color: var(--text-muted);">실시간 평가 금액: 12,450,893.49 HKWB</p>
+        <!-- DUAL BANKING SYSTEM (WEB3 DIGITAL BANK & INTERNET BANK) -->
+        <h2 class="section-title">글로벌 통합 뱅킹 시스템</h2>
+        <div class="banking-system-grid">
+            <!-- 1. Web3 Digital Bank (HKWB) -->
+            <div class="bank-card web3">
+                <span class="bank-badge">Web3 디지털 뱅크</span>
+                <h3>HKWB (HK WORLD BANK)</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">탈중앙화 기반 Pi Network 및 크립토 연동 시스템</p>
+                <div class="asset-balance">314,159.00 <span style="font-size: 1rem; color: #fff;">Pi</span></div>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">평가금액: 12,450,893 HKWB</p>
                 <div style="margin-top: 20px;">
-                    <button style="padding: 10px 20px; background: var(--accent-purple); border: none; color: white; border-radius: 8px; font-weight: bold; cursor: pointer;">HK 뱅크 계좌 연동</button>
-                    <button style="padding: 10px 20px; background: transparent; border: 1px solid var(--border-color); color: white; border-radius: 8px; margin-left: 10px; cursor: pointer;">KYC/KYB 인증 상태: 확인 완료</button>
+                    <button style="padding: 10px 18px; background: var(--accent-purple); border: none; color: white; border-radius: 8px; font-weight: bold; cursor: pointer;">24단어 암호키 게이트웨이</button>
+                    <button style="padding: 10px 18px; background: transparent; border: 1px solid var(--border-color); color: white; border-radius: 8px; margin-left: 5px; cursor: pointer;">지갑 검증 완료</button>
                 </div>
             </div>
-            <div class="card" style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
-                <h3 style="color: var(--accent-gold); margin-bottom: 10px;">HK BANK 연동</h3>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">Web2 & Web3 자산 상호 변환 지원</p>
-                <button style="padding: 12px; background: var(--accent-gold); border: none; color: #000; font-weight: bold; border-radius: 8px; cursor: pointer;">바로가기</button>
+
+            <!-- 2. Internet Bank (HK BANK) -->
+            <div class="bank-card internet">
+                <span class="bank-badge">인터넷 뱅크</span>
+                <h3>HK BANK</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Web2 기반 법정화폐 예치·스마트 이율 계산 인터넷 은행</p>
+                <div class="asset-balance" style="color: #fff;">KRW 010-***-****</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">가변 예치 이율 적용 (ASI 자동 조정)</p>
+                <div style="margin-top: 20px;">
+                    <button style="padding: 10px 18px; background: var(--accent-gold); border: none; color: black; border-radius: 8px; font-weight: bold; cursor: pointer;">6자리 PIN 빠른 인증</button>
+                    <button style="padding: 10px 18px; background: transparent; border: 1px solid var(--border-color); color: white; border-radius: 8px; margin-left: 5px; cursor: pointer;">계좌 이체</button>
+                </div>
             </div>
         </div>
 
         <!-- 10 CORE MODULES (5x2) -->
         <h2 class="section-title">10대 핵심 분산 연동망 모듈</h2>
         <div class="modules-grid">
-            <div class="module-item"><span class="module-icon">🔗</span><b>지갑 연결</b><br><small>지갑인증</small></div>
+            <div class="module-item"><span class="module-icon">🔗</span><b>지갑 연결</b><br><small>지갑 인증</small></div>
             <div class="module-item"><span class="module-icon">💸</span><b>송금</b><br><small>실시간 전송</small></div>
             <div class="module-item"><span class="module-icon">💳</span><b>결제</b><br><small>온/오프라인</small></div>
             <div class="module-item"><span class="module-icon">🏦</span><b>예치</b><br><small>가변 이율 적용</small></div>
@@ -388,15 +415,15 @@
         </div>
 
         <!-- UBI & SOCIAL IMPACT -->
-        <h2 class="section-title">순수익 사회환원 (30%~60%) & UBI 시스템</h2>
-        <div class="card ubi-box">
-            <h3>투명한 실시간 사회환원 및 기본소득 분배</h3>
-            <p style="color: var(--text-muted); margin-top: 5px;">기업 순이익 중 30%는 UBI 분배, 30%는 회사 경영비, 최대 30%는 HK 사회재단 투자 자본으로 안전하게 관리됩니다.</p>
-            <div class="slider-container">
-                <label>월간 플랫폼 순수익 가상 시뮬레이터</label>
+        <h2 class="section-title">순수익 사회환원 (30%~60%) & UBI 분배 시스템</h2>
+        <div class="ubi-box">
+            <h3>투명한 실시간 사회환원 및 기본소득 분배 구조</h3>
+            <p style="color: var(--text-muted); margin-top: 5px;">기업 순이익 30% UBI 최우선 배정 (추천인 ID <b>njw2358</b> 회원 우선), 30% 회사 경영비, 최대 30% HK 사회재단 자본금 구성</p>
+            <div style="margin-top: 20px;">
+                <label>월간 순수익 가상 시뮬레이터 (KRW)</label>
                 <input type="range" min="100000000" max="1000000000" value="500000000" style="width: 100%; margin: 15px 0;">
                 <div style="display: flex; justify-content: space-between; font-weight: bold;">
-                    <span>사회환원 총액 (UBI + 재단): 500,000,000 원</span>
+                    <span>사회환원 총액: 500,000,000 원</span>
                     <span style="color: var(--accent-neon);">글로벌 UBI 한도 (30%): 250,000,000 원</span>
                 </div>
             </div>
@@ -406,12 +433,12 @@
         <h2 class="section-title">AGI 고객센터 '삐니' & 미디어</h2>
         <div class="media-grid">
             <div class="media-box">
-                <h3>유튜브 공식 방송</h3>
-                <div class="video-placeholder">YouTube Player (@Hyekong2026)</div>
+                <h3>유튜브 공식 방송 (@Hyekong2026)</h3>
+                <div class="video-placeholder">YouTube Live & Clip Player</div>
             </div>
             <div class="media-box">
-                <h3>틱톡 숏폼 / 실시간 스트리밍</h3>
-                <div class="video-placeholder">TikTok Player (@Hyekong2026)</div>
+                <h3>틱톡 실시간 스트리밍 (@Hyekong2026)</h3>
+                <div class="video-placeholder">TikTok Short-form Player</div>
             </div>
         </div>
 
@@ -427,47 +454,39 @@
             <div class="eco-card"><b>7. HK-PARTSBANK</b>부품뱅크 글로벌 공급망</div>
             <div class="eco-card"><b>8. HK-DEFENCE-HUB</b>방위산업 기술 혁신</div>
             <div class="eco-card"><b>9. HK-AI-CORE</b>AGI/ASI 차세대 신경망</div>
-            <div class="eco-card"><b>10. HK-GLOBAL-LOGISTICS</b>스마트 물류 물류망</div>
-            <div class="eco-card"><b>11. HK-SMART-CITIES</b>해오름 메가시티 데이터 인프라</div>
-            <div class="eco-card"><b>12. HK-CYBER-SECURITY</b>양자 암호 보안</div>
+            <div class="eco-card"><b>10. HK-GLOBAL-LOGISTICS</b>스마트 글로벌 물류망</div>
+            <div class="eco-card"><b>11. HK-SMART-CITIES</b>해오름 메가시티 인프라</div>
+            <div class="eco-card"><b>12. HK-CYBER-SECURITY</b>양자 암호 보안 모듈</div>
             <div class="eco-card"><b>13. HK-QUANTUM-COMPUTING</b>초고속 양자 연산</div>
-            <div class="eco-card"><b>14. HK-DIGITAL-HEALTH</b>디지털 헬스 케어</div>
+            <div class="eco-card"><b>14. HK-DIGITAL-HEALTH</b>디지털 헬스케어</div>
             <div class="eco-card"><b>15. HK-EDTECH-GLOBAL</b>글로벌 AI 교육 인프라</div>
             <div class="eco-card"><b>16. HK-MEDIA-SYNDICATE</b>차세대 융합 미디어</div>
-            <div class="eco-card"><b>17. HK-FUTURE-MOBILITY</b>자율주행 및 친환경 이동수단</div>
-            <div class="eco-card"><b>18. HK-GREEN-ENERGY</b>수소 및 친환경 재생에너지</div>
+            <div class="eco-card"><b>17. HK-FUTURE-MOBILITY</b>자율주행 친환경 이동수단</div>
+            <div class="eco-card"><b>18. HK-GREEN-ENERGY</b>수소 및 재생에너지</div>
             <div class="eco-card"><b>19. HK-FINTECH-LAB</b>탈중앙 Web3 금융 연구소</div>
         </div>
 
-        <!-- WHITEPAPER (100 ITEMS) -->
-        <h2 class="section-title">백서 (Whitepaper v1.0 - 100개 서술형 항목)</h2>
+        <!-- WHITEPAPER & COMPLIANCE (BLACK BORDER BOXES) -->
+        <h2 class="section-title">백서 (Whitepaper v1.0) & 규제 준수</h2>
         <div class="black-box-container">
+            <h3 style="margin-bottom: 15px; color: var(--accent-gold);">백서 핵심 서술 항목 (100개 항목 포함)</h3>
             <div class="whitepaper-list">
-                <div class="whitepaper-item"><b>제 1장:</b> HK WORLD BANK 생태계의 비전과 10대 연동망 분산 금융 구조의 서술적 정의</div>
-                <div class="whitepaper-item"><b>제 2장:</b> Pi Network 메인넷 분산 장부와 실시간 연동 및 동기화 보안 아키텍처</div>
+                <div class="whitepaper-item"><b>제 1장:</b> HK WORLD BANK 생태계의 비전과 10대 연동망 분산 금융 구조 서술</div>
+                <div class="whitepaper-item"><b>제 2장:</b> Pi Network 메인넷 분산 장부 실시간 연동 및 동기화 아키텍처</div>
                 <div class="whitepaper-item"><b>제 3장:</b> 30% 순이익 기반 UBI(보편적 기본소득) 스마트 계약 자동 분배 알고리즘</div>
-                <div class="whitepaper-item"><b>제 4장:</b> AGI 삐니 / ASI 삐니 자율 금융 심사 알고리즘 및 60개국 언어 실시간 통역 메커니즘</div>
+                <div class="whitepaper-item"><b>제 4장:</b> AGI 삐니 / ASI 삐니 자율 금융 심사 알고리즘 및 60개국 언어 실시간 통역</div>
                 <div class="whitepaper-item"><b>제 5장:</b> 가변 예치 이율 산정 모델 및 중도 해지 시 6.0%~8.5% 불이익 가산율 규정</div>
-                <div class="whitepaper-item">... (총 100개 서술 항목 풀 텍스트 연동 구역) ...</div>
+                <div class="whitepaper-item">... (100개 서술형 항목 Full List 구역) ...</div>
             </div>
         </div>
 
-        <!-- FAQ (20 ITEMS) -->
-        <h2 class="section-title">자주 묻는 질문 (FAQ 20개 항목)</h2>
-        <div class="card" style="margin-bottom: 60px;">
-            <p><b>Q1. 추천인 ID njw2358 등록 시 어떤 혜택이 있나요?</b><br>A1. 추천인 코드 njw2358 입력 사용자는 UBI(기본소득) 스마트 계약 분배 시 최우선 순위로 배정됩니다.</p>
-            <hr style="border-color: var(--border-color); margin: 15px 0;">
-            <p><b>Q2. KYC 및 KYB 인증이 필수인가요?</b><br>A2. 네, 미인증 방문자는 '둘러보기' 읽기 전용 모드만 가능하며 실제 송금, 결제, 스테이킹 거래를 위해서는 필수적으로 완료해야 합니다.</p>
-        </div>
-
-        <!-- COMPLIANCE & LEGAL -->
-        <h2 class="section-title">규제 및 규정 준수 (Compliance & Legal)</h2>
         <div class="black-box-container">
-            <ul style="list-style: none; line-height: 2;">
-                <li>✔ 21개국 글로벌 디지털 자산 법규 준수 모듈 가동</li>
-                <li>✔ 해외 해킹 방어 컴플라이언스 및 24시간 실시간 모니터링 시스템</li>
+            <h3 style="margin-bottom: 15px; color: var(--accent-neon);">컴플라이언스 & 글로벌 보안 체계</h3>
+            <ul style="list-style: none; line-height: 2; font-size: 0.95rem;">
+                <li>✔ 21개국 글로벌 디지털 자산 법규 준수 모듈 적용</li>
+                <li>✔ 해외 해킹 방어 컴플라이언스 및 24시간 실시간 인공지능 탐지 시스템</li>
                 <li>✔ FATF 트래블 룰(Travel Rule) 및 실시간 제재 리스트 자동 검증</li>
-                <li>✔ 블랙리스트 및 검은 국경 차단 조치 완료</li>
+                <li>✔ 블랙리스트 및 검은 국경 차단 솔루션 내장</li>
             </ul>
         </div>
 
@@ -487,3 +506,4 @@
 
 </body>
 </html>
+
