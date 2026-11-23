@@ -6,18 +6,15 @@
   <title>HKWB — 인류와 기술이 공존하는 차세대 디지털 금융 혁신</title>
   <style>
     :root {
-      --bg-navy: #0f2046;
-      --bg-navy-deep: #09142e;
-      --card-bg: rgba(18, 37, 82, 0.88);
+      --bg-navy: #0e1f44;
+      --bg-navy-deep: #081126;
+      --card-bg: #152b5c;
       --gold: #f5b82e;
-      --gold-soft: rgba(245, 184, 46, 0.35);
+      --gold-border: rgba(245, 184, 46, 0.45);
       --text-main: #ffffff;
-      --text-sub: #c9d6f2;
-      --btn-web3-start: #7c5cff;
-      --btn-web3-end: #d946ef;
-      --btn-ib-start: #059669;
-      --btn-ib-end: #10b981;
-      --border-subtle: rgba(255, 255, 255, 0.14);
+      --text-sub: #cfdcf5;
+      --web3-grad: linear-gradient(90deg, #7c5cff 0%, #d946ef 100%);
+      --ib-grad: linear-gradient(90deg, #059669 0%, #10b981 100%);
     }
 
     * {
@@ -28,58 +25,65 @@
 
     body {
       font-family: 'Pretendard', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
-      background: radial-gradient(circle at 20% 15%, #1b3878 0%, var(--bg-navy) 52%, var(--bg-navy-deep) 100%);
+      background: radial-gradient(circle at 20% 10%, #1d3b7d 0%, var(--bg-navy) 55%, var(--bg-navy-deep) 100%);
       color: var(--text-main);
       min-height: 100vh;
       line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
     }
 
-    .topbar {
+    .header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--border-subtle);
       flex-wrap: wrap;
       gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .brand-logo {
-      font-size: 28px;
+    .logo {
+      font-size: 30px;
       font-weight: 900;
-      letter-spacing: 1.5px;
       color: var(--gold);
-      text-decoration: none;
+      letter-spacing: 2px;
+      cursor: pointer;
     }
 
-    .top-meta {
+    .header-info {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      flex-wrap: wrap;
       font-size: 13px;
       color: var(--text-sub);
-      flex-wrap: wrap;
     }
 
-    .ref-badge {
-      background: rgba(245, 184, 46, 0.14);
-      border: 1px solid var(--gold-soft);
-      color: #ffd66b;
+    .ref-pill {
       padding: 6px 12px;
       border-radius: 999px;
+      background: rgba(245, 184, 46, 0.16);
+      border: 1px solid var(--gold-border);
+      color: #ffd875;
       font-weight: 700;
     }
 
-    .container {
-      max-width: 1180px;
+    .main {
+      max-width: 1200px;
       margin: 36px auto 64px;
       padding: 0 24px;
     }
 
-    .hero-card {
+    .screen {
+      display: none;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    .hero-box {
       background: var(--card-bg);
       border: 2px solid var(--gold);
       border-radius: 24px;
@@ -88,287 +92,325 @@
     }
 
     .hero-title {
-      font-size: clamp(32px, 4.5vw, 54px);
+      font-size: clamp(32px, 4.6vw, 56px);
       font-weight: 900;
-      line-height: 1.22;
+      line-height: 1.2;
       letter-spacing: -0.02em;
-      color: var(--text-main);
       margin-bottom: 18px;
       word-break: keep-all;
     }
 
-    .hero-title .highlight {
+    .hero-title span {
       color: var(--gold);
     }
 
-    .hero-subtitle {
+    .hero-sub {
       font-size: clamp(16px, 2vw, 22px);
       font-weight: 700;
       color: var(--text-sub);
-      margin-bottom: 32px;
+      margin-bottom: 34px;
       word-break: keep-all;
     }
 
-    .cta-group {
+    .btn-row {
       display: flex;
       gap: 18px;
       flex-wrap: wrap;
-      margin-bottom: 24px;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 16px 28px;
-      font-size: 17px;
-      font-weight: 800;
-      color: #ffffff;
+    .btn-main {
       border: none;
       border-radius: 14px;
+      padding: 18px 28px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
       cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
-      text-decoration: none;
+      transition: transform 0.15s ease, filter 0.15s ease;
     }
 
-    .btn:hover {
+    .btn-main:hover {
       transform: translateY(-2px);
-      filter: brightness(1.06);
+      filter: brightness(1.07);
     }
 
     .btn-web3 {
-      background: linear-gradient(90deg, var(--btn-web3-start), var(--btn-web3-end));
-      box-shadow: 0 10px 24px rgba(156, 78, 245, 0.35);
+      background: var(--web3-grad);
+      box-shadow: 0 12px 24px rgba(156, 78, 245, 0.35);
     }
 
-    .btn-internet-bank {
-      background: linear-gradient(90deg, var(--btn-ib-start), var(--btn-ib-end));
-      box-shadow: 0 10px 24px rgba(16, 185, 129, 0.35);
+    .btn-ib {
+      background: var(--ib-grad);
+      box-shadow: 0 12px 24px rgba(16, 185, 129, 0.35);
     }
 
-    .status-panel {
-      display: none;
-      margin-top: 20px;
-      padding: 22px;
-      border-radius: 16px;
-      background: rgba(9, 20, 46, 0.82);
-      border: 1px solid var(--gold-soft);
+    .sub-panel {
+      background: var(--card-bg);
+      border: 2px solid var(--gold-border);
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
     }
 
-    .status-panel.active {
-      display: block;
-    }
-
-    .status-header {
+    .sub-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
       gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
     }
 
-    .status-title {
-      font-size: 18px;
-      font-weight: 800;
+    .sub-title {
+      font-size: 28px;
+      font-weight: 900;
       color: var(--gold);
     }
 
-    .close-btn {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      padding: 4px 10px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .status-desc {
-      font-size: 15px;
-      color: var(--text-sub);
-      margin-bottom: 14px;
-    }
-
-    .action-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .mini-btn {
-      background: #1e3a8a;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      padding: 10px 16px;
+    .btn-back {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 10px;
+      padding: 10px 16px;
       font-size: 14px;
       font-weight: 700;
       cursor: pointer;
     }
 
-    .info-grid {
+    .form-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
-      margin-top: 28px;
+      margin-bottom: 22px;
     }
 
-    .info-box {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
+    .card-item {
+      background: rgba(8, 17, 38, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 16px;
       padding: 20px;
     }
 
-    .info-box h3 {
-      font-size: 16px;
+    .card-item h3 {
+      font-size: 17px;
       font-weight: 800;
       color: var(--gold);
       margin-bottom: 8px;
     }
 
-    .info-box p {
+    .card-item p {
       font-size: 14px;
       color: var(--text-sub);
+      margin-bottom: 14px;
+    }
+
+    .input-box {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: #0b1938;
+      color: #ffffff;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .btn-action {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .result-box {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 12px;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      color: #d1fae5;
+      font-size: 15px;
+      font-weight: 700;
+      display: none;
+    }
+
+    .result-box.show {
+      display: block;
     }
 
     .footer {
+      max-width: 1200px;
+      margin: 24px auto 40px;
+      padding: 0 24px;
       text-align: center;
-      margin-top: 32px;
       font-size: 13px;
-      color: #9fb2d9;
+      color: #9cb2dc;
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <a href="#top" class="brand-logo">HKWB</a>
-    <div class="top-meta">
-      <span class="ref-badge">추천인 ID: ljw2358 (UBI 수령 우선순위)</span>
-      <span>AGI 삐니 · ASI 삐니 지원</span>
+  <header class="header">
+    <div class="logo" id="goHomeLogo">HKWB</div>
+    <div class="header-info">
+      <span class="ref-pill">추천인 ID: ljw2358 (UBI 수령 우선순위)</span>
+      <span>AGI 삐니 · ASI 삐니 고객지원</span>
       <span>support@hkwb.world</span>
     </div>
   </header>
 
-  <main class="container" id="top">
-    <section class="hero-card">
-      <h1 class="hero-title">
-        인류와 기술이 공존하는<br />
-        <span class="highlight">차세대 디지털 금융 혁신</span>
-      </h1>
-      <p class="hero-subtitle">
-        10대 글로벌 보안 기술 &amp; AI 기술 기반 글로벌 자율 금융 플랫폼 HKWB
-      </p>
+  <main class="main">
+    <!-- 1. 메인 화면 -->
+    <section class="screen active" id="screenMain">
+      <div class="hero-box">
+        <h1 class="hero-title">
+          인류와 기술이 공존하는<br />
+          <span>차세대 디지털 금융 혁신</span>
+        </h1>
+        <p class="hero-sub">
+          10대 글로벌 보안 기술 &amp; AI 기술 기반 글로벌 자율 금융 플랫폼 HKWB
+        </p>
 
-      <div class="cta-group">
-        <button type="button" class="btn btn-web3" id="btnWeb3">
-          Web3 디지털 은행 진입하기 &gt;
-        </button>
-        <button type="button" class="btn btn-internet-bank" id="btnInternetBank">
-          인터넷 뱅킹 진입하기 &gt;
-        </button>
-      </div>
-
-      <div class="status-panel" id="statusPanel" role="region" aria-live="polite">
-        <div class="status-header">
-          <h2 class="status-title" id="statusTitle">진입 상태</h2>
-          <button type="button" class="close-btn" id="closePanel">닫기</button>
-        </div>
-        <p class="status-desc" id="statusDesc"></p>
-        <div class="action-row" id="statusActions"></div>
-      </div>
-
-      <div class="info-grid">
-        <div class="info-box">
-          <h3>인터넷 뱅킹 &amp; 원화 계좌 연동</h3>
-          <p>인터넷 뱅킹 진입하기 버튼을 통해 전용 뱅킹 세션과 원화 계좌 연동 절차를 순차적으로 진행합니다.</p>
-        </div>
-        <div class="info-box">
-          <h3>10대 분산 연동망</h3>
-          <p>지갑 연결, 송금, 결제, 예치, 보상, 기본소득(UBI), 스왑, 덱스 스왑, LP 스테이킹, 파이 수량 기능을 지원합니다.</p>
-        </div>
-        <div class="info-box">
-          <h3>보안 및 수익 배분 원칙</h3>
-          <p>KYC/KYB 인증 기반 운영과 함께 순수익 30% UBI, 30% 회사 경영비, 30% HK 사회재단 구조를 따릅니다.</p>
+        <div class="btn-row">
+          <button type="button" class="btn-main btn-web3" id="openWeb3Btn">
+            Web3 디지털 은행 진입하기 &gt;
+          </button>
+          <button type="button" class="btn-main btn-ib" id="openIbBtn">
+            인터넷 뱅킹 진입하기 &gt;
+          </button>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
-      hkwb.world · 문의: support@hkwb.world
-    </footer>
+    <!-- 2. 인터넷 뱅킹 화면 (초록색 버튼 전용) -->
+    <section class="screen" id="screenInternetBank">
+      <div class="sub-panel">
+        <div class="sub-top">
+          <h2 class="sub-title">인터넷 뱅킹 진입</h2>
+          <button type="button" class="btn-back" data-back="screenMain">메인으로 돌아가기</button>
+        </div>
+
+        <div class="form-grid">
+          <div class="card-item">
+            <h3>인터넷 뱅킹 인증</h3>
+            <p>아이디 또는 인증 코드를 입력하고 인터넷 뱅킹 세션에 진입합니다.</p>
+            <input type="text" class="input-box" id="ibUserId" placeholder="사용자 ID 입력 (예: hkwb_user)" />
+            <button type="button" class="btn-action" id="ibAuthSubmit">인터넷 뱅킹 로그인</button>
+          </div>
+
+          <div class="card-item">
+            <h3>원화 계좌 연동</h3>
+            <p>인터넷 뱅킹 모듈에서 원화 계좌 연결 및 연동 상태를 확인합니다.</p>
+            <input type="text" class="input-box" id="krwAccountInput" placeholder="연동할 원화 계좌번호 입력" />
+            <button type="button" class="btn-action" id="krwLinkSubmit">원화 계좌 연동하기</button>
+          </div>
+        </div>
+
+        <div class="result-box" id="ibResultBox"></div>
+      </div>
+    </section>
+
+    <!-- 3. Web3 디지털 은행 화면 (보라색 버튼 전용) -->
+    <section class="screen" id="screenWeb3">
+      <div class="sub-panel">
+        <div class="sub-top">
+          <h2 class="sub-title">Web3 디지털 은행</h2>
+          <button type="button" class="btn-back" data-back="screenMain">메인으로 돌아가기</button>
+        </div>
+
+        <div class="form-grid">
+          <div class="card-item">
+            <h3>지갑 연결 (테스트넷 / 정식)</h3>
+            <p>지갑 연결, 송금, 결제, 예치, 보상, 기본소득(UBI), 스왑, 덱스 스왑, LP 스테이킹, 파이 수량 모듈을 엽니다.</p>
+            <input type="text" class="input-box" id="refInput" value="ljw2358" placeholder="추천인 ID (ljw2358 입력 시 UBI 우선순위)" />
+            <button type="button" class="btn-action" id="walletConnectSubmit">지갑 연결 및 모듈 열기</button>
+          </div>
+
+          <div class="card-item">
+            <h3>운영 및 수익 배분 기준</h3>
+            <p>순수익 30% UBI, 30% 회사 경영비, 30% HK 사회재단 구조를 적용하며 KYC/KYB 인증 후 거래 기능을 이용합니다.</p>
+            <button type="button" class="btn-action" id="policyCheckBtn">운영 기준 확인</button>
+          </div>
+        </div>
+
+        <div class="result-box" id="web3ResultBox"></div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    hkwb.world · 문의: support@hkwb.world
+  </footer>
 
   <script>
     (function () {
-      const btnWeb3 = document.getElementById('btnWeb3');
-      const btnInternetBank = document.getElementById('btnInternetBank');
-      const statusPanel = document.getElementById('statusPanel');
-      const statusTitle = document.getElementById('statusTitle');
-      const statusDesc = document.getElementById('statusDesc');
-      const statusActions = document.getElementById('statusActions');
-      const closePanel = document.getElementById('closePanel');
+      const screens = document.querySelectorAll('.screen');
+      const openWeb3Btn = document.getElementById('openWeb3Btn');
+      const openIbBtn = document.getElementById('openIbBtn');
+      const goHomeLogo = document.getElementById('goHomeLogo');
+      const backButtons = document.querySelectorAll('[data-back]');
 
-      function openPanel(title, description, buttons) {
-        statusTitle.textContent = title;
-        statusDesc.textContent = description;
-        statusActions.innerHTML = '';
-
-        buttons.forEach(function (item) {
-          const actionBtn = document.createElement('button');
-          actionBtn.type = 'button';
-          actionBtn.className = 'mini-btn';
-          actionBtn.textContent = item.label;
-          actionBtn.addEventListener('click', item.onClick);
-          statusActions.appendChild(actionBtn);
+      function showScreen(targetId) {
+        screens.forEach(function (sec) {
+          sec.classList.remove('active');
         });
-
-        statusPanel.classList.add('active');
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       }
 
-      btnInternetBank.addEventListener('click', function () {
-        openPanel(
-          '인터넷 뱅킹 진입 준비 완료',
-          '초록색 [인터넷 뱅킹 진입하기] 경로가 활성화되었습니다. 인터넷 뱅킹 인증 및 원화 계좌 연동 단계를 바로 시작할 수 있습니다.',
-          [
-            {
-              label: '인터넷 뱅킹 인증 시작',
-              onClick: function () {
-                statusDesc.textContent =
-                  '인터넷 뱅킹 인증 절차가 시작되었습니다. 본인 확인 및 KYC/KYB 상태 확인 후 원화 계좌 연동 탭으로 이동합니다.';
-              }
-            },
-            {
-              label: '원화 계좌 연동 탭 확인',
-              onClick: function () {
-                statusDesc.textContent =
-                  '원화 계좌 연동 모듈이 선택되었습니다. 계좌 연결 및 입출금 한도 확인을 진행할 수 있습니다.';
-              }
-            }
-          ]
-        );
+      openWeb3Btn.addEventListener('click', function () {
+        showScreen('screenWeb3');
       });
 
-      btnWeb3.addEventListener('click', function () {
-        openPanel(
-          'Web3 디지털 은행 진입 준비 완료',
-          '보라색 [Web3 디지털 은행 진입하기] 경로가 활성화되었습니다. 지갑 연결(테스트넷/정식) 및 10대 분산 연동망 모듈로 이동할 수 있습니다.',
-          [
-            {
-              label: '지갑 연결 모달 열기',
-              onClick: function () {
-                statusDesc.textContent =
-                  '지갑 연결 준비가 되었습니다. 추천인 ID(ljw2358) 입력 시 UBI 수령 우선순위가 적용됩니다.';
-              }
-            }
-          ]
-        );
+      openIbBtn.addEventListener('click', function () {
+        showScreen('screenInternetBank');
       });
 
-      closePanel.addEventListener('click', function () {
-        statusPanel.classList.remove('active');
+      goHomeLogo.addEventListener('click', function () {
+        showScreen('screenMain');
+      });
+
+      backButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          showScreen(btn.getAttribute('data-back'));
+        });
+      });
+
+      const ibResultBox = document.getElementById('ibResultBox');
+      document.getElementById('ibAuthSubmit').addEventListener('click', function () {
+        const uid = document.getElementById('ibUserId').value.trim() || '방문자';
+        ibResultBox.textContent = uid + ' 님의 인터넷 뱅킹 진입 인증 단계가 준비되었습니다.';
+        ibResultBox.classList.add('show');
+      });
+
+      document.getElementById('krwLinkSubmit').addEventListener('click', function () {
+        const acc = document.getElementById('krwAccountInput').value.trim() || '미입력 계좌';
+        ibResultBox.textContent = '원화 계좌(' + acc + ') 연동 확인 단계가 활성화되었습니다.';
+        ibResultBox.classList.add('show');
+      });
+
+      const web3ResultBox = document.getElementById('web3ResultBox');
+      document.getElementById('walletConnectSubmit').addEventListener('click', function () {
+        const refVal = document.getElementById('refInput').value.trim();
+        const priorityMsg = refVal === 'ljw2358'
+          ? '추천인 ljw2358 확인 — UBI 수령 우선순위가 적용됩니다.'
+          : '입력된 추천인: ' + (refVal || '없음');
+        web3ResultBox.textContent = 'Web3 디지털 은행 지갑 연결 단계가 열렸습니다. (' + priorityMsg + ')';
+        web3ResultBox.classList.add('show');
+      });
+
+      document.getElementById('policyCheckBtn').addEventListener('click', function () {
+        web3ResultBox.textContent = '순수익 배분: UBI 30% · 회사 경영비 30% · HK 사회재단 30% (투자자본 필요 시 활용).';
+        web3ResultBox.classList.add('show');
       });
     })();
   </script>
